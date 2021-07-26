@@ -1,20 +1,7 @@
 #!/bin/zsh
-# Hydrate Kali with my personal preferences and pentest repos
+python3 setup.py install #Hydrate Kali with my personal preferences and pentest repos
 
 # ----- Set up directories -----
-if [[ -d "/usr/bin/HackRepo" ]]
-then
-    echo "HackRepo directory already exists! Skipping..."
-else
-mkdir /usr/bin/HackRepo;
-fi
-
-if [[ -d "/root/TryHackMe" ]]
-then
-    echo "TryHackMe directory already exists! Skipping..."
-else
-mkdir /root/TryHackMe;
-fi
 
 if [[ -d "/usr/bin/pip" ]]
 then
@@ -42,7 +29,7 @@ apt-get update && apt-get upgrade -y
 apt autoremove -y
 
 # ----- Clone git repositories -----
-cd /usr/bin/HackRepo;
+cd /usr/bin/;
 git clone https://github.com/pentestmonkey/windows-privesc-check.git;
 git clone https://github.com/21y4d/nmapAutomator;
 git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite.git;
@@ -61,28 +48,29 @@ git clone https://github.com/codingo/Reconnoitre.git;
 git clone https://github.com/ropnop/kerbrute.git;
 git clone https://github.com/ivan-sincek/php-reverse-shell.git;
 git clone https://github.com/OJ/gobuster.git;
+git clone https://github.com/trustedsec/unicorn;
+git clone https://github.com/EnableSecurity/wafw00f;
+git clone https://github.com/the-useless-one/pywerview;
+git clone https://github.com/r4wd3r/RID-Hijacking;
+git clone https://github.com/NytroRST/NetRipper;
+git clone https://github.com/orlyjamie/mimikittenz;
+git clone https://github.com/klsecservices/Invoke-Vnc;
+git clone https://github.com/danielbohannon/Invoke-Obfuscation;
 
 # ----- Setup bad Reconnoitre ----
-cd /usr/bin/HackRepo/Reconnoitre/;
+cd /usr/bin/Reconnoitre/;
 python3 setup.py install;
 
-# ----- Setup stegseek ----
-cd /usr/bin/HackRepo/;
-mkdir stegseek;
-cd stegseek/;
-wget https://github.com/RickdeJager/stegseek/releases/download/v0.5/stegseek_0.5-1.deb;
-apt install ./stegseek_0.5-1.deb;
-
 # ----- Setup bad characters txt file in /usr/bin/HackRepo ----
-cd /usr/bin/HackRepo;
-if [[ -f "/usr/bin/HackRepo/badchars.txt" ]]
+cd /usr/bin/;
+if [[ -f "/usr/bin/badchars.txt" ]]
 then
     echo "badchars.txt already exists. Skipping..."
-else cp /root/kali-hydration/badchars.txt /usr/bin/HackRepo/badchars.txt
+else cp /root/kali-hydration/badchars.txt /usr/bin/badchars.txt
 fi
 
 # ----- Set executable permissions on git repos -----
-chmod +x /usr/bin/HackRepo/nmapAutomator/nmapAutomator.sh
+chmod +x /usr/bin/nmapAutomator/nmapAutomator.sh
 
 # ----- Set up Pip Installer -----
 cd /usr/bin/pip;
@@ -93,12 +81,12 @@ python3 get-pip.py;
 pip install pycryptodome;
 
 # ---- Install Impacket ----
-cd /usr/bin/HackRepo/impacket;
+cd /usr/bin/impacket;
 pip3 install .;
 python3 setup.py install;
 
 # ---- Install Dirsearch Requirements ----
-cd /usr/bin/HackRepo/dirsearcher;
+cd /usr/bin/dirsearcher;
 pip3 install -r requirements.txt;
 
 # ----- Set up Lolcat -----
