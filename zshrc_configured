@@ -168,12 +168,12 @@ if [ -x /usr/bin/dircolors ]; then
     alias diff='diff --color=auto'
     alias ip='ip --color=auto'
     alias jarvis='apt-get update && apt-get upgrade -y'
-    alias nmapAutomator='/usr/bin/HackRepo/nmapAutomator/./nmapAutomator.sh'
+    alias nmapAutomator='/usr/bin/nmapAutomator/./nmapAutomator.sh'
     alias nessus-start='/bin/systemctl start nessusd.service'
     alias nessus-stop='/bin/systemctl stop nessusd.service'
     alias nessus-update='/opt/nessus/sbin/nessuscli update --all'
-    alias badchars='cat /usr/bin/HackRepo/badchars.txt'	
-    alias dirsearch='python3 /usr/bin/HackRepo/dirsearch/dirsearch.py'
+    alias badchars='cat /usr/bin/badchars.txt'	
+    alias dirsearch='python3 /usr/bin/dirsearch/dirsearch.py'
 
     export LESS_TERMCAP_mb=$'\E[1;31m'     # begin blink
     export LESS_TERMCAP_md=$'\E[1;36m'     # begin bold
