@@ -1,5 +1,5 @@
 #!/bin/zsh
-python3 setup.py install #Hydrate Kali with my personal preferences and pentest repos
+#Hydrate Kali with my personal preferences and pentest repos
 
 # ----- Set up directories -----
 
