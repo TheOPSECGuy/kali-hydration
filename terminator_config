@@ -1,24 +1,18 @@
 [global_config]
-  window_state = maximise
-  title_hide_sizetext = True
-  title_transmit_fg_color = "#eeeeec"
-  title_transmit_bg_color = "#204a87"
-  title_inactive_fg_color = "#d3d7cf"
-  title_inactive_bg_color = "#2e3436"
-  inactive_color_offset = 0.7916666666666666
-  enabled_plugins = TerminalShot, Logger, LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler
+  title_transmit_fg_color = "#000000"
+  title_transmit_bg_color = "#acef0d"
+  title_receive_bg_color = "#d41919"
+  title_inactive_fg_color = "#ffffff"
+  title_inactive_bg_color = "#23252e"
 [keybindings]
 [profiles]
   [[default]]
-    background_darkness = 0.93
-    background_type = transparent
-    cursor_shape = ibeam
+    background_color = "#001324"
+    background_darkness = 0.95
     cursor_color = "#aaaaaa"
-    foreground_color = "#eeeeec"
-    scrollback_lines = 5000
+    foreground_color = "#ffffff"
     scrollback_infinite = True
-    palette = "#000000:#cd0000:#00e6ff:#cdcd00:#008dff:#cd00cd:#00e6ff:#faebd7:#404040:#ff0000:#00ff00:#ffff00:#0000ff:#ff00ff:#00ffff:#ffffff"
-    copy_on_selection = True
+    palette = "#000000:#cd0000:#99ff00:#cdcd00:#3584e4:#33d17a:#00cdcd:#faebd7:#404040:#ff0000:#00ff00:#ffff00:#0000ff:#ff00ff:#00ffff:#ffffff"
 [layouts]
   [[default]]
     [[[window0]]]
